@@ -1,4 +1,2 @@
-from cgi import test
-
-
-test
+def apple():
+    print("I AM APPLES!")

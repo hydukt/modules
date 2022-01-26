@@ -1,0 +1,16 @@
+Object a_map is a Map with 'central_corridor' passed
+Map __init__ runs, setting start_scene to 'central_corridor'
+
+Object a_game is an Engine with a_map passed
+Engine __init__ runs, setting self.scene map = scene_map (which is the Map we passed earlier)
+
+we call a_game.play()
+
+current_scene is set to self.scene_map.opening_scene(). because we set scene_map to be the same as the a_map object we created, 
+this calls the opening scene function from Map
+
+opening scene returns the function self.next_scene while passing self.start_scene (which was set to 'central_corridor' earlier)
+
+next_scene executes, setting val = Map.scenes.get(scene_name). This calls the dictionary scenes within map class, passing it
+central_corridor, which returns CentralCorridor() resulting CentralCorridor being returned to 
+
